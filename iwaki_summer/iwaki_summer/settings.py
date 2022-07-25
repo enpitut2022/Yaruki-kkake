@@ -57,7 +57,7 @@ ROOT_URLCONF = 'iwaki_summer.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / "templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -142,8 +142,6 @@ try:
  from .local_settings import *
 except ImportError:
  pass
-if not DEBUG:
- SECRET_KEY = '***************************************' #削除したSECRET_KEYをコピペします
 
 import django_heroku
 django_heroku.settings(locals())
