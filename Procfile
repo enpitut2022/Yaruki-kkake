@@ -1,1 +1,1 @@
-web: gunicorn --chdir yaruki_kkake yaruki_kkake.wsgi  --log-file -
+web: gunicorn --chdir iwaki_summer iwaki_summer.wsgi  --log-file -
