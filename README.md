@@ -20,8 +20,6 @@
 
 ## アプリのURL
 
-工事中
+### サービスのURL(Webアプリの場合)
 
-## サービスのURL(Webアプリの場合)
-
-工事中
+[https://yaruki-kkake.herokuapp.com/](https://yaruki-kkake.herokuapp.com/)
