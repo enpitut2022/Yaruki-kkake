@@ -1,5 +1,5 @@
 """
-ASGI config for yaruki_kkake project.
+ASGI config for iwaki_summer project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'yaruki_kkake.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'iwaki_summer.settings')
 
 application = get_asgi_application()

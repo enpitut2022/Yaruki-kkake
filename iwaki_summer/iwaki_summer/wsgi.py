@@ -1,5 +1,5 @@
 """
-WSGI config for yaruki_kkake project.
+WSGI config for iwaki_summer project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'yaruki_kkake.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'iwaki_summer.settings')
 
 application = get_wsgi_application()
