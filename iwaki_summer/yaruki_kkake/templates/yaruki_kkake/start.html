@@ -1,7 +1,21 @@
 {% extends 'yaruki_kkake/base.html' %}
 {% block content %}
-    <h1>
-        Hello World!
-    </h1>
+
+    <div>
+        <div>
+            <p>
+                課題が出てから
+            </p>
+            <p>
+                01:23:45
+            </p>
+        </div>
+        <div>
+            <p>
+                ??人参加中！
+            </p>
+        </div>
+    </div>
+    
     <button type="button" class="btn btn-primary" onclick="location.href='{% url 'doing' %}'">スタート</button>
 {% endblock %}

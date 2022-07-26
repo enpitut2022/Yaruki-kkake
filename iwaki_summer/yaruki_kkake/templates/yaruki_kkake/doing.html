@@ -1,6 +1,29 @@
 {% extends 'yaruki_kkake/base.html' %}
 {% block content %}
-    <h1>
-        Hello Doing!!!!!!!!!!!!!!!
-    </h1>
+<div>
+    <div>
+        <p>
+            今<span id="num_now">8</span>人やってるよ！！
+        </p>
+    </div>
+    <div>
+        <p>
+            あなたは8人目！
+        </p>
+    </div>
+</div>
+
+<script>
+    var num_now = 8;
+    function update() {
+        random = Math.random();
+        if (random > 0.5 || num_now <= 5) {
+            num_now += 1;
+        } else {
+            num_now -= 1;
+        }
+        $("#num_now").text(num_now);
+    }
+    setInterval(update, 5000);
+</script>
 {% endblock %}
