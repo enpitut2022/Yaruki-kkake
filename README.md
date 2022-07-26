@@ -22,4 +22,4 @@
 
 ### サービスのURL(Webアプリの場合)
 
-[https://yaruki-kkake.herokuapp.com/](https://yaruki-kkake.herokuapp.com/)
+[https://yaruki-kkake.herokuapp.com/start](https://yaruki-kkake.herokuapp.com/start)
