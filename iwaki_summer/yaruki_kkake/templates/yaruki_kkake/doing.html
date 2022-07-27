@@ -1,4 +1,5 @@
 {% extends 'yaruki_kkake/base.html' %}
+{% load static %}
 {% block content %}
 <div id="text_doing">
     <div>
@@ -24,17 +25,23 @@
         </thead>
         <tbody>
             <tr>
-                <th scope="row">1</th>
+                <th scope="row">
+                    <img src="{% static 'img/crown1.png' %}" alt="crown1" width="30px">
+                </th>
                 <td>丸太</td>
                 <td>00:12:34.998</td>
             </tr>
             <tr>
-                <th scope="row">2</th>
+                <th scope="row">
+                    <img src="{% static 'img/crown2.png' %}" alt="crown2" width="30px">
+                </th>
                 <td>コンブ</td>
                 <td>01:43:83.001</td>
             </tr>
             <tr>
-                <th scope="row">3</th>
+                <th scope="row">
+                    <img src="{% static 'img/crown3.png' %}" alt="crown3" width="30px">
+                </th>
                 <td>鳥人間</td>
                 <td>01:53:83.436</td>
             </tr>
@@ -58,14 +65,14 @@
                 <td>大谷翔平</td>
                 <td>02:23:80.007</td>
             </tr>
-            <tr>
+            <tr id="my_rank">
                 <th scope="row">8</th>
                 <td>しょうじこうたろう</td>
                 <td>02:54:83.436</td>
             </tr>
             <tr>
                 <th scope="row">9</th>
-                <td>ああ</td>
+                <td>あい</td>
                 <td>03:13:31.255</td>
             </tr>
             <tr>
@@ -73,13 +80,23 @@
                 <td>オイオイ</td>
                 <td>03:23:83.446</td>
             </tr>
+            <tr>
+                <th scope="row">...</th>
+                <td>...</td>
+                <td>...</td>
+            </tr>
+            <tr>
+                <th scope="row" id="last_rank">19</th>
+                <td id="last_user">田中太郎</td>
+                <td id="last_time">08:23:83.446</td>
+            </tr>
         </tbody>
     </table>
 </div>
 
 <script>
     var num_now = 8;
-    function update() {
+    function update_num_now() {
         random = Math.random();
         if (random > 0.5 || num_now <= 5) {
             num_now += 1;
@@ -88,6 +105,22 @@
         }
         $("#num_now").text(num_now);
     }
-    setInterval(update, 8000);
+    var user_list = ["たけのこ", "エイミ", "モリシンタロウ", "しん", "さわしょー", "アレックス", "ビッグボス", "こんどう",  "白くま"];
+    var time_list = ["08:25:83.446", "09:00:00.001", "09:03:56.723", "11:45:13.991", "11:47:14.888", "11:48:55:543", "11:55:55.999", "22:59:59.999",  "23:00:29.124"];
+    var last_index = 0;
+    function update_last_ele(){
+        let last_rank = parseInt($("#last_rank").text());
+        last_rank += 1;
+        let last_user = user_list[last_index];
+        let last_time = time_list[last_index];
+        last_index += 1;
+        last_index %= 9;
+        $("#last_rank").text(last_rank);
+        $("#last_user").text(last_user);
+        $("#last_time").text(last_time);
+    }
+
+    setInterval(update_num_now, 8000);
+    setInterval(update_last_ele, 10000);
 </script>
 {% endblock %}
