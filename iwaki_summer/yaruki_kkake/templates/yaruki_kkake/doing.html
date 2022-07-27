@@ -1,6 +1,6 @@
 {% extends 'yaruki_kkake/base.html' %}
 {% block content %}
-<div>
+<div id="text_doing">
     <div>
         <p>
             今<span id="num_now">8</span>人やってるよ！！
@@ -11,6 +11,70 @@
             あなたは8人目！
         </p>
     </div>
+</div>
+
+<div id="rank_table">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Rank</th>
+                <th scope="col">User</th>
+                <th scope="col">Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>丸太</td>
+                <td>00:12:34.998</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>コンブ</td>
+                <td>01:43:83.001</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>鳥人間</td>
+                <td>01:53:83.436</td>
+            </tr>
+            <tr>
+                <th scope="row">4</th>
+                <td>太郎</td>
+                <td>01:55:83.436</td>
+            </tr>
+            <tr>
+                <th scope="row">5</th>
+                <td>ななし</td>
+                <td>02:12:00.346</td>
+            </tr>
+            <tr>
+                <th scope="row">6</th>
+                <td>一郎</td>
+                <td>02:14:56.406</td>
+            </tr>
+            <tr>
+                <th scope="row">7</th>
+                <td>大谷翔平</td>
+                <td>02:23:80.007</td>
+            </tr>
+            <tr>
+                <th scope="row">8</th>
+                <td>しょうじこうたろう</td>
+                <td>02:54:83.436</td>
+            </tr>
+            <tr>
+                <th scope="row">9</th>
+                <td>ああ</td>
+                <td>03:13:31.255</td>
+            </tr>
+            <tr>
+                <th scope="row">10</th>
+                <td>オイオイ</td>
+                <td>03:23:83.446</td>
+            </tr>
+        </tbody>
+    </table>
 </div>
 
 <script>
