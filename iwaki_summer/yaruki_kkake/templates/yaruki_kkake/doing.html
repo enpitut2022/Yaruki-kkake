@@ -4,12 +4,12 @@
 <div id="text_doing">
     <div>
         <p>
-            今<span id="num_now">8</span>人やってるよ！！
+            8番目に始めました！
         </p>
     </div>
     <div>
         <p>
-            あなたは8人目！
+            今<span id="num_now">3</span>人やってるよ！！
         </p>
     </div>
 </div>
@@ -29,56 +29,56 @@
                     <img src="{% static 'img/crown1.png' %}" alt="crown1" width="30px">
                 </th>
                 <td>丸太</td>
-                <td>00:12:34.998</td>
+                <td>00:12:34</td>
             </tr>
             <tr>
                 <th scope="row">
                     <img src="{% static 'img/crown2.png' %}" alt="crown2" width="30px">
                 </th>
                 <td>コンブ</td>
-                <td>01:43:33.001</td>
+                <td>01:43:33</td>
             </tr>
             <tr>
                 <th scope="row">
                     <img src="{% static 'img/crown3.png' %}" alt="crown3" width="30px">
                 </th>
                 <td>鳥人間</td>
-                <td>01:53:23.436</td>
+                <td>01:53:23</td>
             </tr>
             <tr>
                 <th scope="row">4</th>
                 <td>太郎</td>
-                <td>01:55:53.436</td>
+                <td>01:55:53</td>
             </tr>
             <tr>
                 <th scope="row">5</th>
                 <td>ななし</td>
-                <td>02:12:00.346</td>
+                <td>02:12:00</td>
             </tr>
             <tr>
                 <th scope="row">6</th>
                 <td>一郎</td>
-                <td>02:14:56.406</td>
+                <td>02:14:56</td>
             </tr>
             <tr>
                 <th scope="row">7</th>
                 <td>大谷翔平</td>
-                <td>02:23:20.007</td>
+                <td>02:23:20</td>
             </tr>
             <tr id="my_rank">
                 <th scope="row">8</th>
                 <td>しょうじこうたろう</td>
-                <td>02:54:47.436</td>
+                <td>{{time}}</td>
             </tr>
-            <tr>
+            <!-- <tr>
                 <th scope="row">9</th>
                 <td>あい</td>
-                <td>03:13:31.255</td>
+                <td>03:13:31</td>
             </tr>
             <tr>
                 <th scope="row">10</th>
                 <td>オイオイ</td>
-                <td>03:23:33.446</td>
+                <td>03:23:33</td>
             </tr>
             <tr>
                 <th scope="row">...</th>
@@ -88,8 +88,8 @@
             <tr>
                 <th scope="row" id="last_rank">19</th>
                 <td id="last_user">田中太郎</td>
-                <td id="last_time">08:23:43.446</td>
-            </tr>
+                <td id="last_time">08:23:43</td>
+            </tr> -->
         </tbody>
     </table>
 </div>
@@ -121,8 +121,8 @@
     }
 
     setInterval(update_num_now, 8000);
-    setInterval(update_last_ele, 10000);
-    
+    // setInterval(update_last_ele, 10000);
+
     $("#subject1").addClass("active");
 </script>
 {% endblock %}

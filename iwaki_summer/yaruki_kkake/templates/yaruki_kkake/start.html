@@ -6,9 +6,13 @@
             プログラミング基礎の<br>
             課題が出てから
         </p>
-        <p id="time">
+        <form id="time_form" action="{% url 'doing' %}" method="GET">
+            {% csrf_token %}
+            <p id="time">
             02:54:35
-        </p>
+            </p>
+            <input type="hidden" id="time_input" name="time" value="02:54:35">
+        </form>
     </div>
     <div>
         <p>
@@ -18,7 +22,7 @@
 </div>
 
 <div class="d-grid gap-2 col-6 mx-auto">
-    <button id="start_button" type="button" class="btn btn-primary" onclick="location.href='{% url 'doing' %}'">スタート</button>
+    <button form="time_form" id="start_button" type="submit" class="btn btn-primary">スタート</button>
 </div>
 
 <script>
@@ -46,6 +50,7 @@
         time_str = hh + ":" + mm + ":" + ss;
 
         $("#time").text(time_str);
+        $("#time_input").val(time_str);
     }
     setInterval(update_time, 1000);
 

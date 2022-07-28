@@ -11,7 +11,11 @@ def start2(request):
     return render(request, 'yaruki_kkake/start2.html')
 
 def doing(request):
-    return render(request, 'yaruki_kkake/doing.html')
+    time = {
+        "time" : request.GET.get("time")
+    }
+    print(request.GET)
+    return render(request, 'yaruki_kkake/doing.html', time)
 
 def doing2(request):
     return render(request, 'yaruki_kkake/doing2.html')
