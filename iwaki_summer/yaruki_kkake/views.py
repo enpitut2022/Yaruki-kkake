@@ -12,3 +12,6 @@ def start2(request):
 
 def doing(request):
     return render(request, 'yaruki_kkake/doing.html')
+
+def doing2(request):
+    return render(request, 'yaruki_kkake/doing2.html')
