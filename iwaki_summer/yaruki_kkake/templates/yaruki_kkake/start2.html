@@ -1,0 +1,51 @@
+{% extends 'yaruki_kkake/base.html' %}
+{% block content %}
+<div>
+    <div>
+        <p>
+            課題2が出てから
+        </p>
+        <p id="time">
+            02:54:35
+        </p>
+    </div>
+    <div>
+        <p>
+            ??人参加中！
+        </p>
+    </div>
+</div>
+
+<div class="d-grid gap-2 col-6 mx-auto">
+    <button id="start_button" type="button" class="btn btn-primary" onclick="location.href='{% url 'doing' %}'">スタート</button>
+</div>
+
+<script>
+    function update_time() {
+        let time_li = $("#time").text().split(":");
+
+        var hh = parseInt(time_li[0]);
+        var mm = parseInt(time_li[1]);
+        var ss = parseInt(time_li[2]);
+        ss += 1;
+
+        if(ss >= 60) {
+            mm += 1;
+            ss = 0;
+        }
+        if(mm >= 60) {
+            hh += 1;
+            mm = 0;
+        }
+
+        hh = String(hh).padStart(2, '0');
+        mm = String(mm).padStart(2, '0');
+        ss = String(ss).padStart(2, '0');
+
+        time_str = hh + ":" + mm + ":" + ss;
+
+        $("#time").text(time_str);
+    }
+    setInterval(update_time, 1000);
+</script>
+{% endblock %}
