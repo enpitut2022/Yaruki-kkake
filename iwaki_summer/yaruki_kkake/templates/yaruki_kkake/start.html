@@ -3,6 +3,7 @@
 <div>
     <div>
         <p>
+            プログラミング基礎の<br>
             課題が出てから
         </p>
         <p id="time">
@@ -47,5 +48,7 @@
         $("#time").text(time_str);
     }
     setInterval(update_time, 1000);
+
+    $("#subject1").addClass("active");
 </script>
 {% endblock %}
