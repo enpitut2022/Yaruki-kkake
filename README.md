@@ -22,4 +22,6 @@
 
 ### サービスのURL(Webアプリの場合)
 
-[https://yaruki-kkake.herokuapp.com/start](https://yaruki-kkake.herokuapp.com/start)
+[https://f41f-240b-10-84e1-f800-4a7-5d3c-3772-4a7d.jp.ngrok.io](https://f41f-240b-10-84e1-f800-4a7-5d3c-3772-4a7d.jp.ngrok.io)
+
+
