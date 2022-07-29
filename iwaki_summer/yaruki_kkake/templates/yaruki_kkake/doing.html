@@ -1,5 +1,12 @@
 {% extends 'yaruki_kkake/base.html' %}
 {% load static %}
+
+{% block user_name %}
+<a class="nav-link active" aria-current="page" href="#">
+    {{ user_name }}
+</a>
+{% endblock %}
+
 {% block content %}
 <div id="text_doing">
     <div>
