@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import User
+from .models import User, Rank
 
 # Create your views here.
 def index(request):
@@ -22,8 +22,20 @@ def doing(request):
         "time" : request.GET.get("time"),
         "user_name" : request.session['user_name']
     }
-    print(request.GET)
+    user = User.objects.filter(name=context["user_name"])
+    print(user[0].id)
+    if not Rank.objects.filter(time=context["time"]).exists():
+        time = Rank(
+            name=user[0],
+            time=context["time"]
+        )
+        time.save()
+    qs = Rank.objects.order_by("time")
+    context["object_list"] = qs
     return render(request, 'yaruki_kkake/doing.html', context)
 
 def doing2(request):
     return render(request, 'yaruki_kkake/doing2.html')
+
+def ajax(request):
+    return render(request, 'yaruki_kkake/ajax.html')

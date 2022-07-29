@@ -11,15 +11,14 @@
 <div>
     <div>
         <p>
-            プログラミング基礎の<br>
+            enPiT7/29responの<br>
             課題が出てから
         </p>
         <form id="time_form" action="{% url 'doing' %}" method="GET">
             {% csrf_token %}
             <p id="time">
-            02:54:35
             </p>
-            <input type="hidden" id="time_input" name="time" value="02:54:35">
+            <input type="hidden" id="time_input" name="time" value="">
         </form>
     </div>
     <div>
@@ -34,33 +33,26 @@
 </div>
 
 <script>
+    var start_time=new Date("2022-07-29 17:57:00");
     function update_time() {
-        let time_li = $("#time").text().split(":");
+        let diff = Date.now()-start_time;
 
-        var hh = parseInt(time_li[0]);
-        var mm = parseInt(time_li[1]);
-        var ss = parseInt(time_li[2]);
-        ss += 1;
-
-        if(ss >= 60) {
-            mm += 1;
-            ss = 0;
-        }
-        if(mm >= 60) {
-            hh += 1;
-            mm = 0;
-        }
+        var hh = Math.floor(diff / 3600 / 1000);
+        var mm = Math.floor(diff / 60 / 1000) - hh * 60;
+        var ss = Math.floor(diff / 1000) - hh * 3600 - mm * 60;
+        var ms = Math.floor(diff) - hh * 3600000 - mm * 60000 - ss * 1000;
 
         hh = String(hh).padStart(2, '0');
         mm = String(mm).padStart(2, '0');
         ss = String(ss).padStart(2, '0');
+        ms = String(ms).padStart(3, '0');
 
-        time_str = hh + ":" + mm + ":" + ss;
+        time_str = hh + ":" + mm + ":" + ss + "." + ms;
 
         $("#time").text(time_str);
         $("#time_input").val(time_str);
     }
-    setInterval(update_time, 1000);
+    setInterval(update_time, 8);
 
     $("#subject1").addClass("active");
 </script>
